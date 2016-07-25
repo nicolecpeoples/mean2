@@ -1,0 +1,15 @@
+<div ng-include src="'views/header.html'"></div>
+<div ng-controller="answersController as AC">
+
+	<h2> {{ AC.question.question}} </h2>
+	<h4> {{ AC.question.description}}</h4>
+
+	<form>
+		<p> Answer </p>
+		<textarea ng-model="AC.newAnswer.answer"></textarea>
+		<p> Supporting details for your answer (optional) </p>
+		<textarea ng-model="AC.newAnswer.details"></textarea>
+		<input type="submit" value="Cancel" ng-click="AC.cancel()">
+		<input type="submit" value="Submit" ng-click="AC.create()">
+	</form>
+</div>

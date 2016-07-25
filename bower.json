@@ -1,0 +1,23 @@
+{
+  "name": "mean1",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Nicole Peoples <nicolecpeoples@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/nicolecpeoples/MEAN",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "bootstrap-css": "^3.3.6",
+    "angular-cookies": "^1.5.7"
+  }
+}

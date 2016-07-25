@@ -1,0 +1,11 @@
+<div ng-include src="'views/header.html'"></div>
+<div ng-controller="questionsController as QC">
+	<form>
+		<p> Question </p>
+		<textarea ng-model="QC.newQuestion.question"></textarea>
+		<p> Description (optional) </p>
+		<textarea ng-model="QC.newQuestion.description"></textarea>
+		<input type="submit" value="Cancel" ng-click="QC.cancel()">
+		<input type="submit" value="Submit" ng-click="QC.create()">
+	</form>
+</div>

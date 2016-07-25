@@ -1,0 +1,11 @@
+<div ng-controller="headerController as HC">
+	<header > 
+		<div class="content-lt">
+			<h2> Welcome {{ HC.user.user.username}}</h2>
+			<a href="#/new_question"> Add a Question </a>
+		</div>
+		<div class="content-rt">
+			<a href="#/dashboard"> Dashboard </a> <input type="submit" value="Logout" ng-click="HC.logout()"> 
+		</div>
+	</header>
+</div>

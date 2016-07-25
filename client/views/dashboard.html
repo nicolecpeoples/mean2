@@ -1,0 +1,26 @@
+<div ng-include src="'views/header.html'"></div>
+<div ng-controller="questionsController as QC">
+	<form>
+		
+		<p> Search: <input type="text" ng-model="Search">
+	</form>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th> Question</th>
+				<th> Answers </th>
+				<th> Action </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="question in QC.questions | filter:Search ">
+				<td> {{ question.question }}</td>
+				<td> {{ question._answers.length }}</td>
+				<td> <a href="#/question/{{question._id}} "> Show </a> | <a href="#/question/{{question._id}}/new_answer "> New Answer </a> </td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
