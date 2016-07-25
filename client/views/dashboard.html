@@ -20,11 +20,10 @@
 				<td> {{ poll._user.username }}</td>
 				<td> <a href="#/poll/{{poll._id}} "> {{ poll.question }} </a></td>
 				<td> {{poll.createdAt | date: 'MMMM, dd yyyy'}} </td>
-				<td >  <button ng-show="poll._user._id == user.id" ng-click="DC.delete(poll)" class="btn btn-primary"> Delete </a> </td>
+				<td >  <button ng-click="DC.delete(poll)" class="btn btn-primary"> Delete </a> </td>
 			</tr>
 
 		</tbody>
 	</table>
 
 </div>
-
