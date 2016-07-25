@@ -1,5 +1,5 @@
 <div ng-include src="'views/header.html'"></div>
-<div ng-controller="questionsController as QC">
+<div ng-controller="dashboardController as DC">
 	<form>
 		
 		<p> Search: <input type="text" ng-model="Search">
@@ -8,17 +8,21 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th> Question</th>
-				<th> Answers </th>
+				<th> Name</th>
+				<th> Survey Question </th>
+				<th> Date Posted </th>
 				<th> Action </th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="question in QC.questions | filter:Search ">
-				<td> {{ question.question }}</td>
-				<td> {{ question._answers.length }}</td>
-				<td> <a href="#/question/{{question._id}} "> Show </a> | <a href="#/question/{{question._id}}/new_answer "> New Answer </a> </td>
+			<tr ng-repeat="poll in DC.polls | filter:Search ">
+
+				<td> {{ poll._user.username }}</td>
+				<td> <a href="#/poll/{{poll._id}} "> {{ poll.question }} </a></td>
+				<td> {{poll.createdAt | date: 'MMMM, dd yyyy'}} </td>
+				<td >  <button ng-show="poll._user._id == user.id" ng-click="DC.delete(poll)" class="btn btn-primary"> Delete </a> </td>
 			</tr>
+
 		</tbody>
 	</table>
 

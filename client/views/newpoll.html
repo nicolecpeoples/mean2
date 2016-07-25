@@ -1,0 +1,13 @@
+<div ng-include src="'views/header.html'"></div>
+<div ng-controller="pollsController as PC">
+	<form name="PollForm">
+		<p> Question: <textarea ng-model="PC.newPoll.question" required ng-minlength="8" name="question"></textarea><span ng-show="PollForm.question.$touched && PollForm.question.$invalid">Should be at least 8 characters</span></p>
+		
+		* all options are required
+		<p> Option 1: <input type="text" ng-model="PC.newPoll.options.option1.text" required ng-minlength="3" name="option1"> <span ng-show="PollForm.option1.$touched && PollForm.option1.$invalid">Field is too short</span></p>
+		<p> Option 2: <input type="text" ng-model="PC.newPoll.options.option2.text" required ng-minlength="3" name="option2"> <span ng-show="PollForm.option2.$touched && PollForm.option2.$invalid">Field is too short</span></p>
+		<p> Option 3: <input type="text" ng-model="PC.newPoll.options.option3.text" required ng-minlength="3" name="option3"> <span ng-show="PollForm.option3.$touched && PollForm.option3.$invalid">Field is too short</span></p>
+		<p> Option 4: <input type="text" ng-model="PC.newPoll.options.option4.text" required ng-minlength="3" name="option4"> <span ng-show="PollForm.option4.$touched && PollForm.option4.$invalid">Field is too short</span></p>
+		<input type="submit" value="Create Poll" ng-click="PC.create()" ng-hide="PollForm.$invalid" >
+	</form>
+</div>

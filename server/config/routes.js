@@ -1,6 +1,5 @@
 var users = require('../controllers/users_server_controller.js')
-var questions = require('../controllers/questions_server_controller.js')
-var answers  = require('../controllers/answers_server_controller.js')
+var polls = require('../controllers/polls_server_controller.js')
 
 module.exports = function (app) {
 //users controller
@@ -10,18 +9,17 @@ module.exports = function (app) {
 
   app.get('/logout', users.logout);
 
-//questions controller
- app.route('/questions/:questionID')
-   .get(questions.read);
-  app.param('questionID', questions.questionByID);
+//polls controller
+ app.route('/polls/:pollID')
+   .get(polls.read)
+   .put(polls.vote)
+   .delete(polls.delete);
+  app.param('pollID', polls.pollByID);
 
-  app.get('/questions', questions.index),
-  app.post('/questions', questions.create),
+ app.route('/polls')
+  .get(polls.index)
+  .post(polls.create);
 
 
-//answers controller
-  app.get('/answers/:id', answers.show),
-  app.post('/answers', answers.create)
-  
 
 }

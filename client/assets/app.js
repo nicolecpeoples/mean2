@@ -5,23 +5,17 @@ angular.module('app', ['ngRoute', 'ngCookies']).config(config);
 
 	function config($routeProvider){
 		$routeProvider.when('/', {
-			templateUrl: 'views/login.html',
-			controller: 'questionsController'
+			templateUrl: 'views/login.html'
 		})
 		.when('/dashboard', {
 			templateUrl: 'views/dashboard.html',
-			controller: 'questionsController'
+			controller: 'dashboardController'
 		})
-		.when('/new_question', {
-			templateUrl: 'views/newquestion.html',
-			controller: 'questionsController'
+		.when('/create', {
+			templateUrl: 'views/newpoll.html'
 		})
-		.when('/question/:id', {
-			templateUrl: 'views/question.html',
-			controller: 'questionsController'
-		})
-		.when('/question/:id/new_answer', {
-			templateUrl: 'views/newanswer.html',
+		.when('/poll/:id', {
+			templateUrl: 'views/poll.html'
 		})
 		.otherwise('/', {
 			redirectTo: "/index"

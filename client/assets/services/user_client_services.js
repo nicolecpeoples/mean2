@@ -15,9 +15,9 @@
 		function getSession (callback) {
 	      $http.get('/session')
 	        .then(function (res) {
-	          console.log(res)
 	          if (res.data.status) {
-	            user = res.data.user
+	            user = res.data
+	            console.log(user)
 	            callback(user)
 	          }
 	        })

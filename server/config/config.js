@@ -12,5 +12,5 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
-process.env.PORT = 7000
+process.env.PORT = 8000
 module.exports = app

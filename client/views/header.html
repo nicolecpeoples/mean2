@@ -1,11 +1,13 @@
 <div ng-controller="headerController as HC">
-	<header > 
-		<div class="content-lt">
+	<header class='row'> 
+		<div class="col-md-4">
 			<h2> Welcome {{ HC.user.user.username}}</h2>
-			<a href="#/new_question"> Add a Question </a>
+			
 		</div>
-		<div class="content-rt">
-			<a href="#/dashboard"> Dashboard </a> <input type="submit" value="Logout" ng-click="HC.logout()"> 
+		<div class="col-md-offset-3 col-md-4">
+		<a href="#/create"> Create a new Poll</a> | 
+		<a href="#/dashboard"> Dashboard </a> |
+		<button type="submit"  ng-click="HC.logout()" class="btn btn-primary"> Logout </button> 
 		</div>
 	</header>
 </div>

@@ -8,7 +8,6 @@ module.exports = (function () {
       })
     },
     create: function (req, res) {
-      console.log('here', req.body)
       var user = new User(req.body)
       user.save(function (err) {
         if (err) res.json({status: false, errors: err})

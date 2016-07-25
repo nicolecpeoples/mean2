@@ -1,0 +1,21 @@
+<div ng-include src="'views/header.html'"></div>
+	<div ng-controller="showPollsController as SC">
+		<h2 > {{ SC.poll.question }} </h2>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th> Option</th>
+					<th> Current Count of Votes </th>
+					<th> Action </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="option in SC.poll.options">
+					<td> {{option.text}} </td>
+					<td> {{ option.votes }}   </td>
+					<td><button name="option1" ng-click="SC.vote(SC.poll, option)"> Vote </button></td>
+				</tr>
+			</tbody>
+		</table>
+

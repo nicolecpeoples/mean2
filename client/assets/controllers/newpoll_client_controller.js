@@ -3,10 +3,10 @@
 
 	angular
 		.module('app')
-		.controller('questionsController', Controller)
-		.$inject = ['$scope', 'questionFactory', 'userFactory', '$location']
+		.controller('pollsController', Controller)
+		.$inject = ['$scope', 'pollFactory', 'userFactory', '$location']
 
-	function Controller($scope, questionFactory, userFactory, $location) {
+	function Controller($scope, pollFactory, userFactory, $location) {
 
 		var _this = this;
 		_this.user;
@@ -24,15 +24,16 @@
 	      })
 	    }
 
-	    questionFactory.index(function(data){
+	    pollFactory.index(function(data){
 	    	_this.questions = data.data.questions;
 	    })
 
 		_this.create = function(){
-			var question = _this.newQuestion;
-			question._user = _this.user.user.id;
+			var poll = _this.newPoll;
+			poll._user = _this.user.user.id;
 
-			questionFactory.create(question, function(factory_data){
+			pollFactory.create(poll, function(factory_data){
+				console.log(factory_data)
 				if(factory_data){
 					_this.questions = factory_data.data
 					$location.url('/dashboard')
